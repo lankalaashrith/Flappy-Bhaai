@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Allu Hub</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.cdnfonts.com/css/itc-benguiat" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700;800;900&family=Fredoka:wght@500;600;700&family=Luckiest+Guy&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="arcade-container">
+    <!-- Main Game Canvas Container -->
+    <div class="canvas-wrapper">
+      <canvas id="gameCanvas" width="360" height="640"></canvas>
+
+      <!-- Top Overlay Controls -->
+      <div class="top-bar">
+        <button id="soundBtn" class="icon-btn" title="Sound (M)">
+          <span id="soundIcon">🔊</span>
+        </button>
+        <button id="pauseBtn" class="icon-btn" title="Pause (P)">
+          <span id="pauseIcon">⏸️</span>
+        </button>
+      </div>
+
+      <!-- Live In-Game Score Display -->
+      <div id="liveScore" class="live-score hidden">0</div>
+
+      <!-- Start Screen UI Overlay -->
+      <div id="startScreen" class="overlay-screen active">
+        <div class="logo-container">
+          <div class="stranger-logo">
+            <div class="stranger-top-bar"></div>
+            <div class="stranger-allu">
+              <span class="cap-tall">A</span><span class="cap-mid">LL</span><span class="cap-tall">U</span>
+            </div>
+            <div class="stranger-sub-row">
+              <span class="stranger-line left"></span>
+              <span class="stranger-hub">HUB</span>
+              <span class="stranger-line right"></span>
+            </div>
+          </div>
+        </div>
+
+        <div class="instructions-card">
+          <p class="instruction-text">Tannulu Tannulu undi inka , Chusthava</p>
+        </div>
+
+        <button id="playBtn" class="arcade-btn pulse">Start 10gulu</button>
+      </div>
+
+      <!-- Game Over Screen UI Overlay -->
+      <div id="gameOverScreen" class="overlay-screen hidden">
+        <div class="game-over-banner">AIPOYINDI BHAAI</div>
+        
+        <div class="score-card">
+          <div class="medal-slot">
+            <span class="card-label">MEDAL</span>
+            <div id="medalIcon" class="medal-badge empty">None</div>
+          </div>
+          <div class="score-details">
+            <div class="score-row">
+              <span class="card-label">SCORE</span>
+              <span id="finalScore" class="score-val">0</span>
+            </div>
+            <div class="score-row">
+              <span class="card-label">BEST</span>
+              <span id="bestScore" class="score-val">0</span>
+            </div>
+          </div>
+          <div id="newBestBadge" class="new-best-tag hidden">NEW BEST!</div>
+        </div>
+
+        <div class="action-buttons">
+          <button id="restartBtn" class="arcade-btn play-again">RETRY</button>
+          <button id="menuBtn" class="arcade-btn secondary">MENU</button>
+        </div>
+      </div>
+
+      <!-- Pause Screen UI Overlay -->
+      <div id="pauseScreen" class="overlay-screen hidden">
+        <h2 class="pause-title">PAUSED</h2>
+        <p class="pause-subtitle">Press P or Tap to Resume</p>
+        <button id="resumeBtn" class="arcade-btn">RESUME</button>
+      </div>
+    </div>
+
+    <!-- Controls help footer -->
+    <div class="controls-hint">
+      <span>[Space / Click / Tap] Flap</span> &bull; 
+      <span>[P] Pause</span> &bull;
+      <span>[M] Sound</span>
+    </div>
+  </div>
+
+  <script src="audio.js"></script>
+  <script src="game.js"></script>
+</body>
+</html>
+
